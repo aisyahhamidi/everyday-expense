@@ -20,5 +20,6 @@ export default defineNuxtConfig({
         transformAssetUrls
       }
     }
-  }
+  },
+  css: ['~/assets/css/global.css']
 });
