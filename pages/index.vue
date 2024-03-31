@@ -164,6 +164,23 @@ import { VCardItem } from 'vuetify/components';
         </VListItem>
       </VList>
     </VCardItem>
+    <VCardItem class="expense__footer">
+      <VRow class="text-center" align="center">
+        <VCol cols="4">
+          <VBtn prepend-icon="mdi-google-analytics">
+            Analytics
+          </VBtn>
+        </VCol>
+        <VCol cols="4">
+          <VBtn icon="mdi-plus"></VBtn>
+        </VCol>
+        <VCol cols="4">
+          <VBtn prepend-icon="mdi-notification-clear-all">
+            Change logs
+          </VBtn>
+        </VCol>
+      </VRow>
+    </VCardItem>
   </VCard>
 </template>
 
@@ -171,6 +188,7 @@ import { VCardItem } from 'vuetify/components';
 .expense {
   height: 100vh;
   max-width: 800px;
+  position: relative;
 }
 
 .expense__title {
@@ -178,14 +196,25 @@ import { VCardItem } from 'vuetify/components';
 }
 
 .expense__header {
-  height: 45%;
+  height: 30%;
 }
 
 .expense__main {
-  height: 45%;
+  height: 52%;
 }
 
 .expense__list {
   max-height: 300px;
+}
+
+.expense__footer {
+  width: 100%;
+  height: 8%;
+  position: absolute;
+  bottom: 0;
+}
+
+.expense__footer :deep(.v-card-item__content) {
+  overflow:visible
 }
 </style>
