@@ -167,17 +167,32 @@ import { VCardItem } from 'vuetify/components';
     <VCardItem class="expense__footer">
       <VRow class="text-center" align="center">
         <VCol cols="4">
-          <VBtn prepend-icon="mdi-google-analytics">
-            Analytics
-          </VBtn>
+          <VBtn prepend-icon="mdi-google-analytics"> Analytics </VBtn>
         </VCol>
         <VCol cols="4">
-          <VBtn icon="mdi-plus"></VBtn>
+          <v-dialog transition="dialog-bottom-transition" width="auto">
+    <template v-slot:activator="{ props: activatorProps }">
+      <v-btn
+      icon="mdi-plus"
+        v-bind="activatorProps"
+      ></v-btn>
+    </template>
+
+    <template v-slot:default="{ isActive }">
+      <v-card>
+        <v-toolbar title="Opening from the Bottom"></v-toolbar>
+
+        <v-card-text class="text-h2 pa-12"> Hello world! </v-card-text>
+
+        <v-card-actions class="justify-end">
+          <v-btn text="Close" @click="isActive.value = false"></v-btn>
+        </v-card-actions>
+      </v-card>
+    </template>
+  </v-dialog>
         </VCol>
         <VCol cols="4">
-          <VBtn prepend-icon="mdi-notification-clear-all">
-            Change logs
-          </VBtn>
+          <VBtn prepend-icon="mdi-notification-clear-all"> Change logs </VBtn>
         </VCol>
       </VRow>
     </VCardItem>
@@ -215,6 +230,6 @@ import { VCardItem } from 'vuetify/components';
 }
 
 .expense__footer :deep(.v-card-item__content) {
-  overflow:visible
+  overflow: visible;
 }
 </style>
